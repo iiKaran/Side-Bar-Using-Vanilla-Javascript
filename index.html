@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SideBar</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-items">
+      <div class="logo"><span class="arrow" id="arrow" onclick="out()">&#8658;</span></div>
+      <div class="option"> <i class="fa fa-home fa-2x"></i>Home</div>
+      <div class="option"> <i class="fa fa-address-book fa-2x"></i>Address</div>
+      <div class="option"> <i class="fa fa-search fa-2x"></i>Search</div>
+      <div class="option"> <i class="fa fa-info-circle fa-2x"></i>Information</div>
+      <div class="option"> <i class="fa fa-phone-square fa-2x"></i>Phone</div>
+      <div class="option"> <i class="fa fa-info-circle fa-2x"></i>Information</div>
+      <div class="option"> <i class="fa fa-user fa-2x"></i>User</div>
+      <div class="option"> <i class="fa fa-sign-out fa-2x"></i>Log Out</div>
+    </div>
+  </nav>
+  <script>
+
+
+
+
+
+
+
+    arr = document.getElementById("arrow");
+    sidebar = document.getElementById("sidebar");
+    option = document.getElementsByClassName("option");
+    inArr = document.getElementById("in-arr");
+    // console.log(arr, sidebar, inArr);
+    // arr.addEventListener("click",out);
+    outed = document.getElementsByClassName("outone");
+    function out() {
+      console.log("otiut")
+      sidebar.style.width = "20vw";
+      Array.from(option).forEach((element) => {
+        element.style.visibility = "visible";
+        // console.log(arr);
+      })
+      arr.innerHTML = "&#8656;";
+      arr.classList.add("outone");
+      outed = document.getElementsByClassName("outone");
+      console.log(outed[0]);
+      outed[0].addEventListener("click", innn);
+      // console.log(arr, sidebar, inArr);
+    }
+    function innn() {
+      console.log("innn")
+      Array.from(option).forEach((element) => {
+        element.style.visibility = "hidden";
+        // console.log(arr);
+      })
+      sidebar.style.width = "5vw";
+      arr.innerHTML = "&#8658;";
+      outed[0].removeEventListener("click", innn);
+      arr.classList.remove("outone");
+    }
+
+
+// console.log(arr, sidebar, inArr);
+
+
+  </script>
+</body>
+
+</html>
